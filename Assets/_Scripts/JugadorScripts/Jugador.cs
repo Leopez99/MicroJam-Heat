@@ -12,7 +12,7 @@ public class Jugador : MonoBehaviour
     float velocidadDeMovimiento;
     [SerializeField] float velocidadDeCaminar;
     [SerializeField] float velocidadDeCorrer;
-    private int carbonesActuales;
+    [SerializeReference] private int carbonesActuales;
     private Animator animator;
     public bool estoyMinando;
 
@@ -35,6 +35,8 @@ public class Jugador : MonoBehaviour
     private bool isRunning;                         // Indica si el jugador está corriendo
     public Slider staminaBar;                       // Stamina UI
     private StaminaSlider staminaSlider;
+
+    public bool estoyEnStackDeCarbon;
 
     private void Awake() {
         spriteRenderer  = GetComponent<SpriteRenderer>();
@@ -92,6 +94,13 @@ public class Jugador : MonoBehaviour
             Debug.Log("No se pueden llevar mas carbones");
         }
         Debug.Log("Estoy minando = " + estoyMinando);
+    }
+
+    public void DepositarCarbon(InputAction.CallbackContext context) {
+
+        if(estoyEnStackDeCarbon && carbonesActuales > 0 && context.performed) {
+            carbonesActuales--;
+        }
     }
 
     public bool hayEspacioEnBolsa() {
@@ -172,5 +181,7 @@ public class Jugador : MonoBehaviour
             staminaBar.value = currentStamina / maxStamina;
         }
     }
+
+
 
 }
