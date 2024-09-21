@@ -11,6 +11,7 @@ public class Jugador : MonoBehaviour
     [SerializeField] float velocidadDeMovimiento;
     private int carbonesActuales;
     private Animator animator;
+    public bool estoyMinando;
 
     [Header("Estos son los idles que va a tener despues de moverse")]
     [SerializeField] Sprite arriba;
@@ -21,17 +22,18 @@ public class Jugador : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     private void Awake() {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        animator    = GetComponent<Animator>(); 
-        rb2D        = GetComponent<Rigidbody2D>();
-        playerInput = GetComponent<PlayerInput>();
-        spriteIdle = spriteRenderer.sprite;
+        spriteRenderer  = GetComponent<SpriteRenderer>();
+        animator        = GetComponent<Animator>(); 
+        rb2D            = GetComponent<Rigidbody2D>();
+        playerInput     = GetComponent<PlayerInput>();
+        spriteIdle      = spriteRenderer.sprite;
     }
 
     private void Update() {
         input = playerInput.actions["Movimiento"].ReadValue<Vector2>();
         CambiarReferenciaDeIdle();
         AnimacionesDeMovimiento();
+        AnimacionMinar();
     }
 
     private void FixedUpdate() {
@@ -50,11 +52,13 @@ public class Jugador : MonoBehaviour
     public void AgarrarCarbon() {
         if(hayEspacioEnBolsa()) {
             carbonesActuales++;
+            estoyMinando = true;
             Debug.Log($"El jugador tiene {carbonesActuales} carbones");
         }
         else {
             Debug.Log("No se pueden llevar mas carbones");
         }
+        Debug.Log("Estoy minando = " + estoyMinando);
     }
 
     public bool hayEspacioEnBolsa() {
@@ -82,9 +86,20 @@ public class Jugador : MonoBehaviour
         }
     }
 
+    private void AnimacionMinar() {
+        if (!hayEspacioEnBolsa()) {
+            estoyMinando = false;
+        }
+        animator.SetBool("Minando", estoyMinando);
+    }
+
     private void CambiarIdle() {
-        if(input.x == 0 && input.y == 0) {
+        if(input.x == 0 && input.y == 0 && !estoyMinando) {
             spriteRenderer.sprite = spriteIdle;
         }
+    }
+
+    public int getCarbonesActuales() {
+        return this.carbonesActuales;
     }
 }

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8840000301553011603}
   - component: {fileID: 8840000301553011596}
   - component: {fileID: 1668405214645923856}
+  - component: {fileID: 180584252498349351}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Untagged
@@ -101,13 +102,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49c31c47d3f9dca4588d2a1c665b53fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: {x: 0, y: 0}
   velocidadDeMovimiento: 3
   arriba: {fileID: 1828465423, guid: b6b26d4b7157ca0468751810bbb35aae, type: 3}
   abajo: {fileID: 1700723185, guid: b6b26d4b7157ca0468751810bbb35aae, type: 3}
   izquierda: {fileID: -1863512139, guid: b6b26d4b7157ca0468751810bbb35aae, type: 3}
   derecha: {fileID: -634467652, guid: b6b26d4b7157ca0468751810bbb35aae, type: 3}
-  spriteIdle: {fileID: -1863512139, guid: b6b26d4b7157ca0468751810bbb35aae, type: 3}
 --- !u!114 &8840000301553011602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,3 +224,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &180584252498349351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8840000301553011606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f10418b547f6d3e4f8d42722fc1cb3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
