@@ -105,7 +105,7 @@ public class Carbon : MonoBehaviour, IClickeable
 
         if (contadorActivo) {
             tiempoDesdeUltimoClick += Time.deltaTime;
-            Debug.Log(tiempoDesdeUltimoClick);
+            //Debug.Log(tiempoDesdeUltimoClick);
             if(tiempoDesdeUltimoClick >= 0.8) {
                 contadorActivo = false;
                 jugador.estoyMinando = false;

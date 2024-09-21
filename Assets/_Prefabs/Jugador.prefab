@@ -102,11 +102,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49c31c47d3f9dca4588d2a1c665b53fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadDeMovimiento: 3
+  velocidadDeCaminar: 3
+  velocidadDeCorrer: 6
+  estoyMinando: 0
   arriba: {fileID: 1828465423, guid: b6b26d4b7157ca0468751810bbb35aae, type: 3}
   abajo: {fileID: 1700723185, guid: b6b26d4b7157ca0468751810bbb35aae, type: 3}
   izquierda: {fileID: -1863512139, guid: b6b26d4b7157ca0468751810bbb35aae, type: 3}
   derecha: {fileID: -634467652, guid: b6b26d4b7157ca0468751810bbb35aae, type: 3}
+  maxStamina: 40
+  currentStamina: 0
+  staminaRegenerationRate: 10
+  staminaDepletionRate: 20
+  staminaRegenDelay: 2
 --- !u!114 &8840000301553011602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,13 +145,13 @@ MonoBehaviour:
     m_ActionName: Player/New action
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8840000301553011606}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 8840000301553011601}
+        m_TargetAssemblyTypeName: Jugador, Assembly-CSharp
+        m_MethodName: Correr
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -236,3 +243,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f10418b547f6d3e4f8d42722fc1cb3ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 0}

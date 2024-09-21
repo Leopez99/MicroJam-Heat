@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Jugador : MonoBehaviour
 {
     PlayerInput playerInput;
     Rigidbody2D rb2D;
     Vector2 input;
-    [SerializeField] float velocidadDeMovimiento;
+    float velocidadDeMovimiento;
+    [SerializeField] float velocidadDeCaminar;
+    [SerializeField] float velocidadDeCorrer;
     private int carbonesActuales;
     private Animator animator;
     public bool estoyMinando;
@@ -21,12 +24,26 @@ public class Jugador : MonoBehaviour
     Sprite spriteIdle;
     SpriteRenderer spriteRenderer;
 
+    [Header("Stamina Settings")]
+    public float maxStamina = 40f;                  // Máxima stamina
+    [Tooltip("Tasa de regeneración por segundo")]
+    public float staminaRegenerationRate = 10f;     // Tasa de regeneración por segundo
+    [Tooltip("Tasa de agotamiento por segundo al correr")]
+    public float staminaDepletionRate = 20f;        // Tasa de agotamiento por segundo al correr
+    private float currentStamina;                   // Stamina actual
+    private bool exausted;                          // Indica si el jugador termino su barra de stamina hasta el final
+    private bool isRunning;                         // Indica si el jugador está corriendo
+    public Slider staminaBar;                       // Stamina UI
+
     private void Awake() {
         spriteRenderer  = GetComponent<SpriteRenderer>();
         animator        = GetComponent<Animator>(); 
         rb2D            = GetComponent<Rigidbody2D>();
         playerInput     = GetComponent<PlayerInput>();
+
         spriteIdle      = spriteRenderer.sprite;
+        velocidadDeMovimiento = velocidadDeCaminar;
+        currentStamina = maxStamina;
     }
 
     private void Update() {
@@ -34,6 +51,8 @@ public class Jugador : MonoBehaviour
         CambiarReferenciaDeIdle();
         AnimacionesDeMovimiento();
         AnimacionMinar();
+        HandleStamina();
+        UpdateStaminaUI();
     }
 
     private void FixedUpdate() {
@@ -47,6 +66,19 @@ public class Jugador : MonoBehaviour
     private void Movimiento() {
         Vector2 movimiento = input * Time.deltaTime * velocidadDeMovimiento;
         rb2D.MovePosition(rb2D.position + movimiento);
+    }
+
+    public void Correr(InputAction.CallbackContext context) {
+        //Solo dejarlo correr cuando no esta exausto
+        if (context.performed && !exausted) {
+            velocidadDeMovimiento = velocidadDeCorrer;
+            isRunning = true;
+        }
+
+        if (context.canceled) {
+            velocidadDeMovimiento = velocidadDeCaminar;
+            isRunning = false;
+        }
     }
 
     public void AgarrarCarbon() {
@@ -102,4 +134,41 @@ public class Jugador : MonoBehaviour
     public int getCarbonesActuales() {
         return this.carbonesActuales;
     }
+
+    private void HandleStamina() {
+        // Si el jugador está corriendo, agotamos stamina
+        if (isRunning) {
+            currentStamina -= staminaDepletionRate * Time.deltaTime;
+        }
+
+        else {
+            // Si no está corriendo regenerar stamina
+            if (currentStamina < maxStamina) {
+                //Debug.Log("Se esta recargando su estamina");
+                currentStamina += staminaRegenerationRate * Time.deltaTime;
+                currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
+                    //Si termino de recargarse entonces dejarlo correr de nuevo
+                    if(currentStamina >= maxStamina) {
+                        exausted = false;
+                    }
+            }
+        }
+
+        // No dejar que la stamina sea menor a 0
+        currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
+
+        // Si la stamina se agota, el jugador no puede correr hasta que se recupere por completo
+        if (currentStamina <= 0) {
+            exausted = true;    // Indicamos que el jugador termino su barra de stamina
+            isRunning = false;  // Forzamos a que el jugador deje de correr
+            velocidadDeMovimiento = velocidadDeCaminar;
+        }
+    }
+
+    private void UpdateStaminaUI() {
+        if (staminaBar != null) {
+            staminaBar.value = currentStamina / maxStamina;
+        }
+    }
+
 }
