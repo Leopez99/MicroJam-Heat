@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4b96421620f2cdd40bdc4bce0fa81dd0
+guid: b6b26d4b7157ca0468751810bbb35aae
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,18 +121,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 613
-        width: 120
-        height: 170
+        y: 800
+        width: 205
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ccd2ae9c6d9e4d47b318955e93d7f2f
-      internalID: 690868044
+      spriteID: 94d364d27c9a471448f998dd78512681
+      internalID: 1700723185
       vertices: []
       indices: 
       edges: []
@@ -141,19 +141,19 @@ TextureImporter:
       name: Abajo2
       rect:
         serializedVersion: 2
-        x: 198
-        y: 613
-        width: 120
-        height: 170
+        x: 205
+        y: 800
+        width: 205
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9722d23e5ae060a49941df570a58534a
-      internalID: -670262811
+      spriteID: 5d789c695a399b2488c5375547d878e9
+      internalID: 344132744
       vertices: []
       indices: 
       edges: []
@@ -162,19 +162,19 @@ TextureImporter:
       name: Abajo3
       rect:
         serializedVersion: 2
-        x: 393
-        y: 614
-        width: 120
-        height: 170
+        x: 410
+        y: 800
+        width: 205
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a702c4853d534948bc18be4477aed47
-      internalID: 140748513
+      spriteID: 000cbe58144d6c043b8c0122a59d1d4d
+      internalID: 1765292604
       vertices: []
       indices: 
       edges: []
@@ -183,19 +183,19 @@ TextureImporter:
       name: Abajo4
       rect:
         serializedVersion: 2
-        x: 594
-        y: 619
-        width: 120
-        height: 170
+        x: 615
+        y: 800
+        width: 205
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d312cb7ad675b8e4f9a7576ad3320667
-      internalID: 209293826
+      spriteID: a4f8c63e79d8abc449a874858a084299
+      internalID: 1079281833
       vertices: []
       indices: 
       edges: []
@@ -205,18 +205,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 413
-        width: 120
-        height: 170
+        y: 600
+        width: 205
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb689cf946542a24b8dc4650aae55dec
-      internalID: -123154633
+      spriteID: 1a4952163e91f4548b7fecc8348354dd
+      internalID: -1863512139
       vertices: []
       indices: 
       edges: []
@@ -225,19 +225,19 @@ TextureImporter:
       name: Izquierda2
       rect:
         serializedVersion: 2
-        x: 199
-        y: 416
-        width: 120
-        height: 170
+        x: 205
+        y: 600
+        width: 205
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58bffe223becb2542a501fbf11e863d5
-      internalID: -610563879
+      spriteID: ce6f77e0201f02b42b78f6d7824d023e
+      internalID: 1217198700
       vertices: []
       indices: 
       edges: []
@@ -246,19 +246,19 @@ TextureImporter:
       name: Izquierda3
       rect:
         serializedVersion: 2
-        x: 397
-        y: 417
-        width: 120
-        height: 170
+        x: 410
+        y: 600
+        width: 205
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2024afe35c7702d459ccdc2a9456861a
-      internalID: 535777991
+      spriteID: 8b640a16acd2db346ab6240f5dffabc9
+      internalID: 634659977
       vertices: []
       indices: 
       edges: []
@@ -267,103 +267,19 @@ TextureImporter:
       name: Izquierda4
       rect:
         serializedVersion: 2
-        x: 592
-        y: 423
-        width: 120
-        height: 170
+        x: 615
+        y: 600
+        width: 205
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90c0880ff0339674684d95b53ffef4b3
-      internalID: -165563817
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Derecha1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 218
-        width: 120
-        height: 170
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4bdf2dae3ab7da144be2c52fcc196667
-      internalID: 250181999
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Derecha2
-      rect:
-        serializedVersion: 2
-        x: 197
-        y: 222
-        width: 120
-        height: 170
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a9c741b5237da614aac37533d433ef24
-      internalID: 2096759311
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Derecha3
-      rect:
-        serializedVersion: 2
-        x: 392
-        y: 216
-        width: 120
-        height: 170
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d2b0a487eaba9349aa67b68bbc906ee
-      internalID: 910720201
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Derecha4
-      rect:
-        serializedVersion: 2
-        x: 592
-        y: 223
-        width: 120
-        height: 170
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cd19c508be6e47f4a834665c643e67d8
-      internalID: 216922651
+      spriteID: acccbb636fb71ff418293f5b8e13f299
+      internalID: -1130495223
       vertices: []
       indices: 
       edges: []
@@ -372,19 +288,19 @@ TextureImporter:
       name: Arriba1
       rect:
         serializedVersion: 2
-        x: 7
-        y: 23
-        width: 120
-        height: 170
+        x: 0
+        y: 400
+        width: 205
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c056b07a3b08b8439e20fe70ddbcb42
-      internalID: 1272190834
+      spriteID: a4fe9ae7f1f10274f9112f3c1e4c56aa
+      internalID: 1828465423
       vertices: []
       indices: 
       edges: []
@@ -393,19 +309,19 @@ TextureImporter:
       name: Arriba2
       rect:
         serializedVersion: 2
-        x: 201
-        y: 26
-        width: 120
-        height: 170
+        x: 205
+        y: 400
+        width: 205
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04a20f7e4fa7e0f4bb27a1edb08bf3ff
-      internalID: -920832360
+      spriteID: de46e60be24ef0540a9ae21e17a3c67d
+      internalID: 1084664686
       vertices: []
       indices: 
       edges: []
@@ -414,19 +330,19 @@ TextureImporter:
       name: Arriba3
       rect:
         serializedVersion: 2
-        x: 395
-        y: 23
-        width: 120
-        height: 170
+        x: 410
+        y: 401
+        width: 205
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c005e7fa003f734aaac589340e17477
-      internalID: 1704910991
+      spriteID: 4786c8821de84df4197788e78ceaafb1
+      internalID: -993479960
       vertices: []
       indices: 
       edges: []
@@ -435,19 +351,187 @@ TextureImporter:
       name: Arriba4
       rect:
         serializedVersion: 2
-        x: 591
-        y: 26
-        width: 120
-        height: 170
+        x: 615
+        y: 400
+        width: 205
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a846068f10428424f965d60f82ad10b0
-      internalID: -1983756048
+      spriteID: b247d95f87458f942ad551e99727449e
+      internalID: -1898607668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minar1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 205
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c59b4f83ab459b74fb36055a1151ed9d
+      internalID: -634467652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minar2
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 200
+        width: 205
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 435c04af0c52c7044b75d7cbdc05c436
+      internalID: 1057476845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minar3
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 200
+        width: 205
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5913ef9f009558d47b76b83fd268e78a
+      internalID: -935581489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minar4
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 200
+        width: 205
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5ee2183e00874d47a83fa3fd2498b82
+      internalID: -365532588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Depositar1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 205
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c78f70ae5b9400844a6102c69cf07031
+      internalID: -1535872316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Depositar2
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 0
+        width: 205
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85cca16b30ac9fd40861a26fb92e89f5
+      internalID: -508520152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Depositar3
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 0
+        width: 205
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8a2d28a5d4f9004c8d9c8c3f0f50d17
+      internalID: -744286924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Depositar4
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 1
+        width: 205
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bd0eaee8e41f3c4788847d26457c8d1
+      internalID: -1803536424
       vertices: []
       indices: 
       edges: []
@@ -463,26 +547,26 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Derecha4: 216922651
-      Abajo1: 690868044
-      Abajo3: 140748513
-      Arriba2: -920832360
-      Izquierda2: -610563879
-      Character_walksheet_2: 1588401650
-      Derecha3: 910720201
-      Izquierda4: -165563817
-      Arriba3: 1704910991
-      Abajo4: 209293826
-      Izquierda1: -123154633
-      Abajo2: -670262811
-      Arriba1: 1272190834
-      Character_walksheet_7: -193577092
-      Derecha1: 250181999
-      Character_walksheet_12: 2055227694
-      Derecha2: 2096759311
-      Arriba4: -1983756048
-      Izquierda3: 535777991
-      Character_walksheet_17: -882315230
+      Abajo1: 1700723185
+      Abajo3: 1765292604
+      Arriba2: 1084664686
+      Depositar1: -1535872316
+      Minar1: -634467652
+      Izquierda2: 1217198700
+      Izquierda4: -1130495223
+      Arriba3: -993479960
+      Abajo4: 1079281833
+      Izquierda1: -1863512139
+      Abajo2: 344132744
+      Arriba1: 1828465423
+      Minar2: 1057476845
+      Depositar3: -744286924
+      Depositar4: -1803536424
+      Depositar2: -508520152
+      Minar4: -365532588
+      Arriba4: -1898607668
+      Izquierda3: 634659977
+      Minar3: -935581489
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
