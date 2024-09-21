@@ -34,13 +34,14 @@ public class Jugador : MonoBehaviour
     private bool exausted;                          // Indica si el jugador termino su barra de stamina hasta el final
     private bool isRunning;                         // Indica si el jugador está corriendo
     public Slider staminaBar;                       // Stamina UI
+    private StaminaSlider staminaSlider;
 
     private void Awake() {
         spriteRenderer  = GetComponent<SpriteRenderer>();
         animator        = GetComponent<Animator>(); 
         rb2D            = GetComponent<Rigidbody2D>();
         playerInput     = GetComponent<PlayerInput>();
-
+        staminaSlider   = staminaBar.GetComponent<StaminaSlider>();
         spriteIdle      = spriteRenderer.sprite;
         velocidadDeMovimiento = velocidadDeCaminar;
         currentStamina = maxStamina;
@@ -150,6 +151,7 @@ public class Jugador : MonoBehaviour
                     //Si termino de recargarse entonces dejarlo correr de nuevo
                     if(currentStamina >= maxStamina) {
                         exausted = false;
+                        staminaSlider.VolverAColorOriginal();
                     }
             }
         }
