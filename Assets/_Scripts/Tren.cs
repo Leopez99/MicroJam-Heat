@@ -11,6 +11,7 @@ public class Tren : MonoBehaviour
         jugador = FindAnyObjectByType<Jugador>();
     }
 
+
     public void AumentarCarbonesDepositados() {
         if(carbonesDepositados < 30) {
             carbonesDepositados++;

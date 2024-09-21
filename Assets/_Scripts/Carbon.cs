@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Carbon : MonoBehaviour, IClickeable
@@ -13,11 +14,13 @@ public class Carbon : MonoBehaviour, IClickeable
     private Color colorInicial;
     public bool contadorActivo;
     float tiempoDesdeUltimoClick;
+    TextMeshPro text;
 
     private void Awake() {
         jugador = FindObjectOfType<Jugador>();
         carbonSpawn = GetComponentInParent<CarbonSpawn>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        text = GetComponentInChildren<TextMeshPro>();
         colorInicial = spriteRenderer.color;
     }
 
@@ -53,6 +56,7 @@ public class Carbon : MonoBehaviour, IClickeable
 
     private void Update() {
         ComportamientoPorClick();
+        ActualizarUI();
     }
 
     private void LateUpdate() {
@@ -93,7 +97,7 @@ public class Carbon : MonoBehaviour, IClickeable
 
     private void CambiarColor() {
         if(puedeClickear)
-            spriteRenderer.color = new Color(0.3f, 0.3f, 0.3f, 100);
+            spriteRenderer.color = new Color(1f, 1f, 1f, 100);
     }
 
     private void ResetearColor() {
@@ -114,5 +118,9 @@ public class Carbon : MonoBehaviour, IClickeable
         else {
             tiempoDesdeUltimoClick = 0;
         }
+    }
+
+    private void ActualizarUI() {
+        text.text = cantidadActual.ToString();
     }
 }
