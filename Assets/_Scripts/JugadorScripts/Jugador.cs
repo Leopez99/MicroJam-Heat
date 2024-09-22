@@ -88,6 +88,7 @@ public class Jugador : MonoBehaviour
     public void AgarrarCarbon() {
         if(hayEspacioEnBolsa()) {
             carbonesActuales++;
+            GameManager.INS.carbonRecogido++;
             estoyMinando = true;
             Debug.Log($"El jugador tiene {carbonesActuales} carbones");
         }

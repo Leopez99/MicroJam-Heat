@@ -13,6 +13,7 @@ public class StackCarbon : MonoBehaviour
     public void EnviarCarbonATren() {
         tren.AumentarCarbonesDepositados();
         Debug.Log("Envio desde el stack al tren");
+        //Dato para el score
     }
 
 

@@ -6,27 +6,43 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    float segundoActual;
-    int minutoActual;
-    public int camionesExplotados;
     public static GameManager INS;
+    [Header("Tiempo")]
+    [SerializeReference] float segundoActual;
+    [SerializeReference] int minutoActual;
     [SerializeField] TextMeshProUGUI textoTiempo;
+
+    [Header("Panel Victoria o derrota")]
+    [SerializeField] GameObject panelVictoriaDerrota;
+    [SerializeField] TextMeshProUGUI textoVictoryDefeat;
+
+    [Header("Datos de score")]
+    [SerializeField] TextMeshProUGUI textoScoreTotal;
+    [SerializeField] TextMeshProUGUI textoScoreTrainBroken;
+    [SerializeField] TextMeshProUGUI textoScoreCoalGrabbed;
+    [SerializeField] TextMeshProUGUI textoScoreTrainSuccess;
+
+    [Header("Datos reales para el score")]
+    public int trenesExplotados;
+    public int carbonRecogido;
+    public int trenesLlenados;
+
+    Jugador jugador;
 
     private void Awake() {
         INS = this;
         segundoActual = 00;
         minutoActual = 3;
+        jugador = FindObjectOfType<Jugador>();
     }
 
     private void Update() {
         Contador();
         GameOver();
+        Victory();
     }
 
     private void Contador() {
-        //if(segundosActuales > 0) {
-        //    segundosActuales -= Time.deltaTime;
-        //}
         ActualizarUITiempo();
     }
 
@@ -35,7 +51,6 @@ public class GameManager : MonoBehaviour
         if (segundoActual >= 0 && minutoActual >= 0) {
             textoTiempo.text = $"TIME: {minutoActual}:{Math.Round((decimal)segundoActual, 0)}";
         }
-        //textoTiempo.text = $"TIME: {Math.Round((decimal)tiempoActual, 1)}";
     }
 
     private void ActualizarSegundos() {
@@ -53,8 +68,35 @@ public class GameManager : MonoBehaviour
     }
 
     private void GameOver() {
-        if(camionesExplotados >= 2) {
-            Debug.Log("Game Over");
+        if(trenesExplotados >= 2) {
+            panelVictoriaDerrota.SetActive(true);
+            textoVictoryDefeat.text = "DEFEAT";
+            ActualizarPanelScore();
+            Time.timeScale = 0;
+            jugador.enabled = false;
         }
+    }
+
+    private void Victory() {
+        if(!(segundoActual >= 0 && minutoActual >= 0)) {
+            panelVictoriaDerrota.SetActive(true);
+            textoVictoryDefeat.text = "VICTORY";
+            ActualizarPanelScore();
+            Time.timeScale = 0;
+            jugador.enabled = false;
+        }
+    }
+
+    private string TotalScore() {
+        int penalizacion = trenesExplotados * 100;
+        int suma = carbonRecogido * 100 + trenesLlenados * 2;
+        return (suma - penalizacion).ToString();
+    }
+
+    private void ActualizarPanelScore() {
+        textoScoreTrainBroken.text = $"Train Broken: {trenesExplotados}";
+        textoScoreCoalGrabbed.text = $"Coal grabbed: {carbonRecogido}";
+        textoScoreTrainSuccess.text = $"Train Success: {trenesLlenados}";
+        textoScoreTotal.text = $"TOTAL: {TotalScore()}";
     }
 }

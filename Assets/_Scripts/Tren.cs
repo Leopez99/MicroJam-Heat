@@ -35,6 +35,9 @@ public class Tren : MonoBehaviour
     public void AumentarCarbonesDepositados() {
         if(carbonesDepositados < cantidadMaximaDeCarbon) {
             carbonesDepositados++;
+            if (carbonesDepositados >= cantidadMaximaDeCarbon) {
+                GameManager.INS.trenesLlenados++;
+            }
         }
     }
 
@@ -62,7 +65,7 @@ public class Tren : MonoBehaviour
         if (contador <= 0) {
             spriteRenderer.color = Color.red;
             this.enabled = false;
-            GameManager.INS.camionesExplotados++;
+            GameManager.INS.trenesExplotados++;
         }
     }
 
