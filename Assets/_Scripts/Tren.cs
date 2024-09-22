@@ -6,11 +6,14 @@ public class Tren : MonoBehaviour
 {
     public int carbonesDepositados;
     [SerializeField] float velocidadMovimiento;
-    Jugador jugador;
     Animator animator;
+    SpriteRenderer spriteRenderer;
+    Color colorInicial;
     private bool activarEntrada;
     private bool activarSalida;
+    private bool activarContador;
     private Vector3 posicionInicial;
+    public float contador;
 
     private void OnEnable() {
         carbonesDepositados = 0;
@@ -18,9 +21,11 @@ public class Tren : MonoBehaviour
     }
 
     private void Awake() {
-        jugador = FindAnyObjectByType<Jugador>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        colorInicial = spriteRenderer.color;
         posicionInicial = transform.localPosition;
+        contador = 30;
     }
 
 
@@ -33,13 +38,27 @@ public class Tren : MonoBehaviour
     private void Update() {
         EstoyLlenoDeCarbon();
         Entrar();
+        Contador();
     }
 
     private void EstoyLlenoDeCarbon() {
         if(carbonesDepositados >= 30) {
-            //gameObject.SetActive(false);
             activarSalida = true;
             Salir();
+        }
+    }
+
+    private void Contador() {
+        if (activarContador) {
+            contador -= Time.deltaTime;
+            RomperTren();
+        }
+    }
+
+    private void RomperTren() {
+        if (contador <= 0) {
+            spriteRenderer.color = Color.red;
+            this.enabled = false;
         }
     }
 
@@ -63,6 +82,7 @@ public class Tren : MonoBehaviour
         }
         else {
             activarEntrada = false;
+            activarContador = true;
         }
         animator.SetBool("Entrando", activarEntrada);
     }

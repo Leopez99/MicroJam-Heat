@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,10 +6,10 @@ using TMPro;
 
 public class UITrain : MonoBehaviour
 {
-    Tren tren;
+    [SerializeReference] Tren tren;
     StackCarbon stackCarbon;
     TextMeshPro textoCantidadCarbon;
-    TextMeshPro textoTiempoDelTren;
+    [SerializeReference] TextMeshPro textoTiempoDelTren;
     SpriteRenderer spriteCarbon;
     [SerializeField] Sprite[] spritesStackCarbon;
 
@@ -17,11 +18,14 @@ public class UITrain : MonoBehaviour
         stackCarbon = GetComponentInChildren<StackCarbon>();
         spriteCarbon = stackCarbon.GetComponent<SpriteRenderer>();
         textoCantidadCarbon = stackCarbon.GetComponentInChildren<TextMeshPro>();
+        textoTiempoDelTren = tren.GetComponentInChildren<TextMeshPro>();
     }
 
     private void Update() {
         textoCantidadCarbon.text = tren.carbonesDepositados.ToString();
         CambiarSpriteStackDeCarbon();
+        //textoTiempoDelTren.text = Mathf.Round(tren.contador).ToString();
+        textoTiempoDelTren.text = Math.Round((decimal)tren.contador, 2).ToString();
     }
 
     private void CambiarSpriteStackDeCarbon() {
