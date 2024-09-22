@@ -127,6 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carbonesDepositados: 0
   velocidadMovimiento: 1.5
+  tiempoActivarTren: 1.5
 --- !u!95 &117838414883197003
 Animator:
   serializedVersion: 5
