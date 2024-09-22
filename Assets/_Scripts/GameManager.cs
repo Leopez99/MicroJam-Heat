@@ -39,6 +39,11 @@ public class GameManager : MonoBehaviour
         imagenDelPanel = panelVictoriaDerrota.GetComponent<Image>();
     }
 
+    private void Start()
+    {
+        panelVictoriaDerrota.SetActive(false);
+    }
+
     private void Update() {
         Contador();
         GameOver();
