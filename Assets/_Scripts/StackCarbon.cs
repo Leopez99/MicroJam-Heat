@@ -13,12 +13,16 @@ public class StackCarbon : MonoBehaviour
     public void EnviarCarbonATren() {
         tren.AumentarCarbonesDepositados();
         Debug.Log("Envio desde el stack al tren");
-        //Dato para el score
     }
 
 
     public bool ElTrenEstaEnEstacion() {
         return tren.gameObject.activeSelf == true;
+    }
+
+    public bool StackLleno()
+    {
+        return tren.carbonesDepositados >= tren.cantidadMaximaDeCarbon;
     }
     
 }

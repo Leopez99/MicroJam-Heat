@@ -100,7 +100,7 @@ public class Jugador : MonoBehaviour
 
     public void DepositarCarbon(InputAction.CallbackContext context) {
 
-        if(estoyEnStackDeCarbon && carbonesActuales > 0 && stackCarbon.ElTrenEstaEnEstacion() && context.performed) {
+        if(estoyEnStackDeCarbon && carbonesActuales > 0 && stackCarbon.ElTrenEstaEnEstacion() && !stackCarbon.StackLleno() && context.performed) {
             stackCarbon.EnviarCarbonATren();
             carbonesActuales--;
         }
