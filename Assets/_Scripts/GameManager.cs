@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,7 +15,8 @@ public class GameManager : MonoBehaviour
 
     [Header("Panel Victoria o derrota")]
     [SerializeField] GameObject panelVictoriaDerrota;
-    [SerializeField] TextMeshProUGUI textoVictoryDefeat;
+    [SerializeReference] Image imagenDelPanel;
+    [SerializeField] Sprite[] spriteVictoryDefeat;
 
     [Header("Datos de score")]
     [SerializeField] TextMeshProUGUI textoScoreTotal;
@@ -34,6 +36,7 @@ public class GameManager : MonoBehaviour
         segundoActual = 00;
         minutoActual = 3;
         jugador = FindObjectOfType<Jugador>();
+        imagenDelPanel = panelVictoriaDerrota.GetComponent<Image>();
     }
 
     private void Update() {
@@ -70,7 +73,8 @@ public class GameManager : MonoBehaviour
     private void GameOver() {
         if(trenesExplotados >= 2) {
             panelVictoriaDerrota.SetActive(true);
-            textoVictoryDefeat.text = "DEFEAT";
+            //textoVictoryDefeat.text = "DEFEAT";
+            imagenDelPanel.sprite = spriteVictoryDefeat[1];
             ActualizarPanelScore();
             Time.timeScale = 0;
             jugador.enabled = false;
@@ -80,7 +84,8 @@ public class GameManager : MonoBehaviour
     private void Victory() {
         if(!(segundoActual >= 0 && minutoActual >= 0)) {
             panelVictoriaDerrota.SetActive(true);
-            textoVictoryDefeat.text = "VICTORY";
+            //textoVictoryDefeat.text = "VICTORY";
+            imagenDelPanel.sprite = spriteVictoryDefeat[0];
             ActualizarPanelScore();
             Time.timeScale = 0;
             jugador.enabled = false;
