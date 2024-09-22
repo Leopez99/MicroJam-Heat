@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         panelVictoriaDerrota.SetActive(false);
+        Time.timeScale= 1.0f;
     }
 
     private void Update() {
@@ -104,9 +105,9 @@ public class GameManager : MonoBehaviour
     }
 
     private void ActualizarPanelScore() {
-        textoScoreTrainBroken.text = $"Train Broken: {trenesExplotados}";
-        textoScoreCoalGrabbed.text = $"Coal grabbed: {carbonRecogido}";
-        textoScoreTrainSuccess.text = $"Train Success: {trenesLlenados}";
+        textoScoreTrainBroken.text = $"Broken trains: {trenesExplotados}";
+        textoScoreCoalGrabbed.text = $"Coal picked up: {carbonRecogido}";
+        textoScoreTrainSuccess.text = $"Filled train: {trenesLlenados}";
         textoScoreTotal.text = $"TOTAL: {TotalScore()}";
     }
 }
