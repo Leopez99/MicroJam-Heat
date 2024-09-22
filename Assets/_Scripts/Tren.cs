@@ -62,6 +62,7 @@ public class Tren : MonoBehaviour
         if (contador <= 0) {
             spriteRenderer.color = Color.red;
             this.enabled = false;
+            GameManager.INS.camionesExplotados++;
         }
     }
 

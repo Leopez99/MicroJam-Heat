@@ -32,10 +32,10 @@ public class UITrain : MonoBehaviour
         if(tren.carbonesDepositados == 0) {
             spriteCarbon.sprite = spritesStackCarbon[0];
         }
-        if (tren.carbonesDepositados == 15) {
+        if (tren.carbonesDepositados == (int)tren.cantidadMaximaDeCarbon/2) {
             spriteCarbon.sprite = spritesStackCarbon[1];
         }
-        if(tren.carbonesDepositados == 30) {
+        if(tren.carbonesDepositados == tren.cantidadMaximaDeCarbon) {
             spriteCarbon.sprite = spritesStackCarbon[2];
         }
     }

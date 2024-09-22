@@ -983,6 +983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07f9653247b35464ba467677c351d785, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textoTiempo: {fileID: 522694643}
 --- !u!1001 &428880144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1197,7 +1198,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -10.195854, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
