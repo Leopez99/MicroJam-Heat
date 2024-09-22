@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 76895d0ee56b622458992f5415567e3c
+guid: 69676229534023441b077c5f1b9a5684
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,91 +115,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Train-Sheet_0
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 9
-        width: 721
-        height: 362
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a837fd4888a576a4c8574cbc018da76d
-      internalID: 1013135398
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Train-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 742
-        y: 9
-        width: 721
-        height: 362
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c372eb1b768855642af62c5d25058473
-      internalID: -1596204741
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Train-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 1477
-        y: 9
-        width: 721
-        height: 362
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1f1a1f2b4af568045a55f8833cf813df
-      internalID: 660715811
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Train-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 2212
-        y: 8
-        width: 721
-        height: 363
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff1677b87d49a254292634d248307aed
-      internalID: -2122684278
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -210,11 +126,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Train-Sheet_2: 660715811
-      Train-Sheet_1: -1596204741
-      Train-Sheet_3: -2122684278
-      Train-Sheet_0: 1013135398
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

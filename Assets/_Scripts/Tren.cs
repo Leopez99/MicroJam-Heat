@@ -17,4 +17,14 @@ public class Tren : MonoBehaviour
             carbonesDepositados++;
         }
     }
+
+    private void Update() {
+        EstoyLlenoDeCarbon();        
+    }
+
+    private void EstoyLlenoDeCarbon() {
+        if(carbonesDepositados >= 30) {
+            gameObject.SetActive(false);
+        }
+    }
 }

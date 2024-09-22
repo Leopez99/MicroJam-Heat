@@ -36,7 +36,8 @@ public class Jugador : MonoBehaviour
     public Slider staminaBar;                       // Stamina UI
     private StaminaSlider staminaSlider;
 
-    public bool estoyEnStackDeCarbon;
+    public bool estoyEnStackDeCarbon;               //Se activa cuando se esta en un stack de carbon
+    private StackCarbon stackCarbon;
 
     private void Awake() {
         spriteRenderer  = GetComponent<SpriteRenderer>();
@@ -98,7 +99,8 @@ public class Jugador : MonoBehaviour
 
     public void DepositarCarbon(InputAction.CallbackContext context) {
 
-        if(estoyEnStackDeCarbon && carbonesActuales > 0 && context.performed) {
+        if(estoyEnStackDeCarbon && carbonesActuales > 0 && stackCarbon.ElTrenEstaEnEstacion() && context.performed) {
+            stackCarbon.EnviarCarbonATren();
             carbonesActuales--;
         }
     }
@@ -183,5 +185,19 @@ public class Jugador : MonoBehaviour
     }
 
 
+    private void OnTriggerEnter2D(Collider2D collision) {
+        stackCarbon = collision.GetComponent<StackCarbon>();
+        if (collision != null) {
+            Debug.Log("Entre al stack carbon");
+            estoyEnStackDeCarbon = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision) {
+        if (collision != null) {
+            Debug.Log("Sali del stack carbon");
+            estoyEnStackDeCarbon = false;
+        }
+    }
 
 }
