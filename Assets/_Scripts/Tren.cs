@@ -15,6 +15,7 @@ public class Tren : MonoBehaviour
     private bool activarContador;
     private Vector3 posicionInicial;
     public float contador;
+    private AudioSource audioSource;
 
     private void OnEnable() {
         carbonesDepositados = 0;
@@ -26,6 +27,7 @@ public class Tren : MonoBehaviour
     private void Awake() {
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource= GetComponent<AudioSource>();
         colorInicial = spriteRenderer.color;
         posicionInicial = transform.localPosition;
         contador = 30;

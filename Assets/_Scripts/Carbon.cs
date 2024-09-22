@@ -15,12 +15,14 @@ public class Carbon : MonoBehaviour, IClickeable
     public bool contadorActivo;
     float tiempoDesdeUltimoClick;
     TextMeshPro text;
+    AudioSource audioSource;
 
     private void Awake() {
         jugador = FindObjectOfType<Jugador>();
         carbonSpawn = GetComponentInParent<CarbonSpawn>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         text = GetComponentInChildren<TextMeshPro>();
+        audioSource= GetComponent<AudioSource>();
         colorInicial = spriteRenderer.color;
     }
 
@@ -31,6 +33,7 @@ public class Carbon : MonoBehaviour, IClickeable
     private void OnMouseDown() {
         if (jugador.hayEspacioEnBolsa()) {
             RestarCantidad();
+            audioSource.Play();
         }
         else if (!puedeClickear) {
             Debug.Log("No se puede clickear aca");
