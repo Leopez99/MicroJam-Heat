@@ -12,7 +12,7 @@ public class Jugador : MonoBehaviour
     float velocidadDeMovimiento;
     [SerializeField] float velocidadDeCaminar;
     [SerializeField] float velocidadDeCorrer;
-    [SerializeReference] private int carbonesActuales;
+    [SerializeReference] public int carbonesActuales;
     private Animator animator;
     public bool estoyMinando;
 

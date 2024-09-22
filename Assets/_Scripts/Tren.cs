@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Tren : MonoBehaviour
@@ -21,7 +22,7 @@ public class Tren : MonoBehaviour
         carbonesDepositados = 0;
         activarEntrada = true;
         contador = 30;
-        cantidadMaximaDeCarbon = Random.Range(12, 15);
+        cantidadMaximaDeCarbon = Random.Range(12, 15);   //Cambia segun el tiempo
     }
 
     private void Awake() {
@@ -31,6 +32,11 @@ public class Tren : MonoBehaviour
         colorInicial = spriteRenderer.color;
         posicionInicial = transform.localPosition;
         contador = 30;
+    }
+
+    private void Start()
+    {
+        ActualizarDificultad();
     }
 
 
@@ -76,6 +82,7 @@ public class Tren : MonoBehaviour
             if (activarSalida) {
                 transform.localPosition = new Vector3 (transform.localPosition.x - velocidadMovimiento * Time.deltaTime, 0, 0);
                 activarContador = false;
+                //StartCoroutine(playSonido());
             }
         }
         else {
@@ -88,8 +95,11 @@ public class Tren : MonoBehaviour
 
     private void Entrar() {
         if (transform.localPosition.x <= 0) {
-            if(activarEntrada)
+            if (activarEntrada)
+            {
                 transform.localPosition = new Vector3(transform.localPosition.x + velocidadMovimiento * 2 * Time.deltaTime, 0, 0);
+                //StartCoroutine(playSonido());
+            }
         }
         else {
             activarEntrada = false;
@@ -98,5 +108,34 @@ public class Tren : MonoBehaviour
         animator.SetBool("Entrando", activarEntrada);
     }
 
+    IEnumerator playSonido()
+    {
+        yield return new WaitForEndOfFrame();
+        audioSource.Play();
+        StopCoroutine(playSonido());
+
+    }
+
+    private void ActualizarDificultad()
+    {
+        
+        if(GameManager.INS.minutoActual <= 2)
+        {
+            cantidadMaximaDeCarbon = Random.Range(12, 15);
+        }
+
+        if (GameManager.INS.minutoActual <= 1)
+        {
+            cantidadMaximaDeCarbon = Random.Range(12, 20);
+        }
+
+        if (GameManager.INS.minutoActual <= 0)
+        {
+            cantidadMaximaDeCarbon = Random.Range(12, 22);
+        }
+
+        
+
+    }
 
 }

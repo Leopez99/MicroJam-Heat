@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager INS;
     [Header("Tiempo")]
     [SerializeReference] float segundoActual;
-    [SerializeReference] int minutoActual;
+    [SerializeReference] public int minutoActual;
     [SerializeField] TextMeshProUGUI textoTiempo;
 
     [Header("Panel Victoria o derrota")]
@@ -29,18 +29,18 @@ public class GameManager : MonoBehaviour
     public int carbonRecogido;
     public int trenesLlenados;
 
-    Jugador jugador;
+    [SerializeReference] Jugador jugador;
 
     private void Awake() {
         INS = this;
         segundoActual = 00;
         minutoActual = 3;
-        jugador = FindObjectOfType<Jugador>();
         imagenDelPanel = panelVictoriaDerrota.GetComponent<Image>();
     }
 
     private void Start()
     {
+        jugador = FindObjectOfType<Jugador>();
         panelVictoriaDerrota.SetActive(false);
         Time.timeScale= 1.0f;
     }
@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
         Contador();
         GameOver();
         Victory();
+        //ActualizarDificultad();
     }
 
     private void Contador() {
@@ -109,5 +110,23 @@ public class GameManager : MonoBehaviour
         textoScoreCoalGrabbed.text = $"Coal picked up: {carbonRecogido}";
         textoScoreTrainSuccess.text = $"Filled train: {trenesLlenados}";
         textoScoreTotal.text = $"TOTAL: {TotalScore()}";
+    }
+
+    private void ActualizarDificultad()
+    {
+        //if(minutoActual <= 2)
+        //{
+        //    cantidadCarbonAleatoria = UnityEngine.Random.Range(12, 15);
+        //}
+
+        //if(minutoActual <= 1)
+        //{
+        //    cantidadCarbonAleatoria = UnityEngine.Random.Range(12, 20);
+        //}
+
+        //if (minutoActual <= 1)
+        //{
+        //    cantidadCarbonAleatoria = UnityEngine.Random.Range(12, 25);
+        //}
     }
 }
