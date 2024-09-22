@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6722716329464049730}
   - component: {fileID: 370905162730376153}
+  - component: {fileID: 3315635047578036906}
   m_Layer: 0
   m_Name: TrenSpawnPoint
   m_TagString: Untagged
@@ -46,7 +47,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac47e482bc136c4d8deb33632e84c17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempoActivarTren: 2
+  tiempoActivarTren: 10
+--- !u!114 &3315635047578036906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6722716329464049731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6d5f4821bac67a4ba90c2e9d53a4b08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spritesStackCarbon:
+  - {fileID: 21300000, guid: 3346c952d5da4fa45b14f4fd185d2de8, type: 3}
+  - {fileID: 21300000, guid: 7bc765f9808ae55498dba2a41cee7478, type: 3}
+  - {fileID: 21300000, guid: 69676229534023441b077c5f1b9a5684, type: 3}
 --- !u!1001 &6035243921445035738
 PrefabInstance:
   m_ObjectHideFlags: 0

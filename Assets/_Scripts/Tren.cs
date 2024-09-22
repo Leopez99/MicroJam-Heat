@@ -53,6 +53,7 @@ public class Tren : MonoBehaviour
             gameObject.SetActive(false);
 
         }
+        animator.SetBool("Saliendo", activarSalida);
     }
 
     private void Entrar() {
@@ -63,6 +64,7 @@ public class Tren : MonoBehaviour
         else {
             activarEntrada = false;
         }
+        animator.SetBool("Entrando", activarEntrada);
     }
 
 

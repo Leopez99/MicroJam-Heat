@@ -9,6 +9,7 @@ public class TrainSpawn : MonoBehaviour
 
     private void Awake() {
         tren = GetComponentInChildren<Tren>();
+        tiempoActivarTren = 10;
     }
 
     private void Update() {
