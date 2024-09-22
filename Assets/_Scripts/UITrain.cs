@@ -22,7 +22,7 @@ public class UITrain : MonoBehaviour
     }
 
     private void Update() {
-        textoCantidadCarbon.text = tren.carbonesDepositados.ToString();
+        textoCantidadCarbon.text = $"{tren.carbonesDepositados}/{tren.cantidadMaximaDeCarbon}";
         CambiarSpriteStackDeCarbon();
         //textoTiempoDelTren.text = Mathf.Round(tren.contador).ToString();
         textoTiempoDelTren.text = Math.Round((decimal)tren.contador, 2).ToString();

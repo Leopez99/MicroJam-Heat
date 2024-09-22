@@ -5,6 +5,7 @@ using UnityEngine;
 public class Tren : MonoBehaviour
 {
     public int carbonesDepositados;
+    public float cantidadMaximaDeCarbon;
     [SerializeField] float velocidadMovimiento;
     Animator animator;
     SpriteRenderer spriteRenderer;
@@ -18,6 +19,8 @@ public class Tren : MonoBehaviour
     private void OnEnable() {
         carbonesDepositados = 0;
         activarEntrada = true;
+        contador = 30;
+        cantidadMaximaDeCarbon = Random.Range(12, 15);
     }
 
     private void Awake() {
@@ -30,7 +33,7 @@ public class Tren : MonoBehaviour
 
 
     public void AumentarCarbonesDepositados() {
-        if(carbonesDepositados < 30) {
+        if(carbonesDepositados < cantidadMaximaDeCarbon) {
             carbonesDepositados++;
         }
     }
@@ -42,7 +45,7 @@ public class Tren : MonoBehaviour
     }
 
     private void EstoyLlenoDeCarbon() {
-        if(carbonesDepositados >= 30) {
+        if(carbonesDepositados >= cantidadMaximaDeCarbon) {
             activarSalida = true;
             Salir();
         }
@@ -64,8 +67,10 @@ public class Tren : MonoBehaviour
 
     private void Salir() {
         if(transform.localPosition.x >= posicionInicial.x) {
-            if(activarSalida)
+            if (activarSalida) {
                 transform.localPosition = new Vector3 (transform.localPosition.x - velocidadMovimiento * Time.deltaTime, 0, 0);
+                activarContador = false;
+            }
         }
         else {
             activarSalida = false;
